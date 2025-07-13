@@ -6,7 +6,7 @@
   background-color: #000;
   overflow: hidden;
   /* หากต้องการให้ Matrix Fade Out ทั้งหน้าจอ */
-  transition: opacity 2s ease-in-out; 
+  transition: opacity 2s ease-in-out;
 }
 
 /* เมื่อ Matrix จบแล้ว ให้ fade out */
@@ -33,27 +33,37 @@
   font-size: 5rem;
   font-weight: bold;
   color: #fff;
-  opacity: 0; /* ซ่อนไว้ก่อน */
+  opacity: 0;
+  /* ซ่อนไว้ก่อน */
   animation: fadeIn 1s forwards;
 }
 
 /* เอฟเฟกต์สีชมพูสำหรับ "HAPPY" (เหมือนในรูป) */
 .pink-happy {
-  color: #ff69b4; /* สีชมพู */
+  color: #ff69b4;
+  /* สีชมพู */
   text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
 }
 
 /* Animation สำหรับการแสดงข้อความ */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Background อวกาศ (เมื่อจบ sequence) */
 .space-background {
   width: 100vw;
   height: 100vh;
-  background-image: url('https://i.pinimg.com/originals/c9/79/11/c97911964f4c8c7c10b77e8a93e3d489.gif'); /* หรือใช้รูปภาพอวกาศของคุณเอง */
+  background-image: url('https://i.pinimg.com/originals/c9/79/11/c97911964f4c8c7c10b77e8a93e3d489.gif');
+  /* หรือใช้รูปภาพอวกาศของคุณเอง */
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -61,6 +71,213 @@
 
 /* สไตล์รูปหนังสือ */
 .book-image {
-  max-width: 400px; /* ขนาดรูปหนังสือ */
+  max-width: 400px;
+  /* ขนาดรูปหนังสือ */
   height: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  transition: opacity 2s ease-in-out;
+}
+
+.message-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+}
+
+.message-text {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  margin: 10px 0;
+}
+
+.pink-happy {
+  color: #ff69b4;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.space-background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1543729988-518ec8620252?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stars {
+  /* พื้นที่สำหรับดาว */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* วางไว้เหนือพื้นหลังแต่ใต้เนื้อหาหลัก */
+}
+
+/* สร้างดาวด้วย box-shadow (ใช้ div เปล่าๆ แล้วสร้างดาวจาก box-shadow) */
+.stars-layer {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    /* ดาวชั้นที่ 1 */
+    200px 100px #fff, 300px 50px #fff, 500px 20px #fff, 800px 150px #fff, 1000px 250px #fff,
+    20px 400px #fff, 150px 320px #fff, 600px 450px #fff, 900px 500px #fff, 1200px 300px #fff,
+    /* ดาวชั้นที่ 2 (เพื่อให้ดูหนาแน่นขึ้น) */
+    100px 600px #fff, 400px 750px #fff, 700px 800px #fff, 1100px 700px #fff, 1300px 850px #fff,
+    /* เพิ่มดาวอื่นๆ ได้ตามต้องการ */
+    50px 10px #fff, 250px 200px #fff, 750px 100px #fff, 950px 350px #fff, 1150px 400px #fff
+    /* เพิ่มดาวชุดที่ 3 (ถี่ขึ้น) */
+    10px 50px #fff, 100px 150px #fff, 350px 200px #fff, 550px 300px #fff, 850px 400px #fff,
+    150px 550px #fff, 450px 600px #fff, 750px 700px #fff, 1050px 800px #fff, 50px 900px #fff,
+    /* เพิ่มดาวชุดที่ 4 (ถี่ขึ้น) */
+    200px 850px #fff, 300px 950px #fff, 450px 50px #fff, 650px 100px #fff, 850px 150px #fff,
+    1050px 200px #fff, 1250px 250px #fff, 100px 800px #fff, 900px 900px #fff, 1100px 950px #fff,
+    /* เพิ่มดาวชุดที่ 5 (ถี่ขึ้นอีก) */
+    10px 10px #fff, 50px 300px #fff, 300px 30px #fff, 500px 600px #fff, 700px 50px #fff,
+    900px 25px #fff, 1100px 100px #fff, 10px 700px #fff, 200px 900px #fff, 400px 100px #fff;
+}
+
+/* Animation สำหรับการระยิบระยับ */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.stars-twinkle {
+  animation: twinkle 3s infinite;
+}
+
+.book-image {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* phone rotation */
+.rotation-prompt {
+  display: none;
+  /* เริ่มต้นซ่อนไว้ */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  /* พื้นหลังสีเข้ม */
+  color: #fff;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* CSS Media Query สำหรับการแสดงผลเฉพาะเมื่ออยู่ในแนวตั้ง (Portrait) */
+@media (orientation: portrait) {
+  .rotation-prompt {
+    display: flex;
+    /* แสดงเมื่ออยู่ในแนวตั้ง */
+  }
+
+  /* ซ่อนเนื้อหาหลักของเว็บไซต์เมื่อมีการแจ้งเตือน */
+  /* body>*:not(.rotation-prompt) {
+    display: none;
+  } */
+}
+
+/* CSS สำหรับไอคอนโทรศัพท์ */
+.phone-icon {
+   color: #0d6efd; /* สีฟ้า */
+  font-size: 80px;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 150px;
+  border: 5px solid #fff;
+  border-radius: 15px;
+  position: relative;
+  /* เพิ่มวงกลมตรงกลางเพื่อเป็นสัญลักษณ์หน้าจอ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ใส่แอนิเมชัน */
+  animation: rotatePhone 2s infinite ease-in-out;
+}
+
+.phone-icon::before {
+  content: '';
+  width: 50%;
+  height: 65%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Keyframes สำหรับแอนิเมชันการหมุน */
+@keyframes rotatePhone {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.message {
+  font-size: 24px;
+  margin-top: 10px;
 }
