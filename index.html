@@ -6,133 +6,13 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + React</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   <style>
     /* CSS สำหรับการจัดสไตล์ */
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      overflow: hidden;
-    }
-
-    .app-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      background-color: #000;
-      transition: opacity 2s ease-in-out;
-    }
-
-    .message-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      z-index: 10;
-    }
-
-    .message-text {
-      font-size: 5rem;
-      font-weight: bold;
-      color: #fff;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      margin: 10px 0;
-    }
-
-    .pink-happy {
-      color: #ff69b4;
-      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .space-background {
-      width: 100vw;
-      height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1543729988-518ec8620252?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .stars {
-      /* พื้นที่สำหรับดาว */
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      /* วางไว้เหนือพื้นหลังแต่ใต้เนื้อหาหลัก */
-    }
-
-    /* สร้างดาวด้วย box-shadow (ใช้ div เปล่าๆ แล้วสร้างดาวจาก box-shadow) */
-    .stars-layer {
-      width: 1px;
-      height: 1px;
-      background: transparent;
-      box-shadow:
-        /* ดาวชั้นที่ 1 */
-        200px 100px #fff, 300px 50px #fff, 500px 20px #fff, 800px 150px #fff, 1000px 250px #fff,
-        20px 400px #fff, 150px 320px #fff, 600px 450px #fff, 900px 500px #fff, 1200px 300px #fff,
-        /* ดาวชั้นที่ 2 (เพื่อให้ดูหนาแน่นขึ้น) */
-        100px 600px #fff, 400px 750px #fff, 700px 800px #fff, 1100px 700px #fff, 1300px 850px #fff,
-        /* เพิ่มดาวอื่นๆ ได้ตามต้องการ */
-        50px 10px #fff, 250px 200px #fff, 750px 100px #fff, 950px 350px #fff, 1150px 400px #fff
-        /* เพิ่มดาวชุดที่ 3 (ถี่ขึ้น) */
-        10px 50px #fff, 100px 150px #fff, 350px 200px #fff, 550px 300px #fff, 850px 400px #fff,
-        150px 550px #fff, 450px 600px #fff, 750px 700px #fff, 1050px 800px #fff, 50px 900px #fff,
-        /* เพิ่มดาวชุดที่ 4 (ถี่ขึ้น) */
-        200px 850px #fff, 300px 950px #fff, 450px 50px #fff, 650px 100px #fff, 850px 150px #fff,
-        1050px 200px #fff, 1250px 250px #fff, 100px 800px #fff, 900px 900px #fff, 1100px 950px #fff,
-        /* เพิ่มดาวชุดที่ 5 (ถี่ขึ้นอีก) */
-        10px 10px #fff, 50px 300px #fff, 300px 30px #fff, 500px 600px #fff, 700px 50px #fff,
-        900px 25px #fff, 1100px 100px #fff, 10px 700px #fff, 200px 900px #fff, 400px 100px #fff;
-    }
-
-    /* Animation สำหรับการระยิบระยับ */
-    @keyframes twinkle {
-
-      0%,
-      100% {
-        opacity: 0.8;
-      }
-
-      50% {
-        opacity: 0.3;
-      }
-    }
-
-    .stars-twinkle {
-      animation: twinkle 3s infinite;
-    }
-
-    .book-image {
-      max-width: 400px;
-      height: auto;
-      margin-bottom: 20px;
-    }
   </style>
 </head>
 
