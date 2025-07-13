@@ -78,6 +78,7 @@
 
 body {
   margin: 0;
+  height: 100vh;
   padding: 0;
   background-color: #000;
   overflow: hidden;
@@ -167,7 +168,7 @@ body {
     /* ดาวชั้นที่ 2 (เพื่อให้ดูหนาแน่นขึ้น) */
     100px 600px #fff, 400px 750px #fff, 700px 800px #fff, 1100px 700px #fff, 1300px 850px #fff,
     /* เพิ่มดาวอื่นๆ ได้ตามต้องการ */
-    50px 10px #fff, 250px 200px #fff, 750px 100px #fff, 950px 350px #fff, 1150px 400px #fff
+    50px 10px #fff, 250px 200px #fff, 750px 100px #fff, 950px 350px #fff, 1150px 400px #fff,
     /* เพิ่มดาวชุดที่ 3 (ถี่ขึ้น) */
     10px 50px #fff, 100px 150px #fff, 350px 200px #fff, 550px 300px #fff, 850px 400px #fff,
     150px 550px #fff, 450px 600px #fff, 750px 700px #fff, 1050px 800px #fff, 50px 900px #fff,
